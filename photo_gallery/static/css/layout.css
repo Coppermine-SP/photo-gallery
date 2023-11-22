@@ -53,3 +53,10 @@ nav .brand-logo {
         line-height: 45px;
     }
 }
+
+@media only screen and (max-width: 993px){
+    nav .container{
+        margin: 0;
+        width: 100%;
+    }
+}
