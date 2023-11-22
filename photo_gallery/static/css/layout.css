@@ -19,6 +19,7 @@ nav {
     font-weight: 200;
     background-color: #101010;
     transition-duration: 0.1s;
+    user-select: none;
 }
 
 nav a{
