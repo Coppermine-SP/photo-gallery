@@ -5,11 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'layout.css' %}" type="text/css"/>
+
+    <!-- vendors css -->
+    <link rel="stylesheet" href="{% static 'vendors/materialize/css/materialize.min.css' %}" type="text/css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Title</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    {% block content %}
-    {% endblock %}
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">About</a></li>
+        <li><a href="badges.html">Explore</a></li>
+        <li><a href="collapsible.html">People</a></li>
+        <li><a href="mobile.html">Tech</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
+  {% block content %}
+  {% endblock %}
+  <script src="{% static 'vendors/materialize/js/materialize.min.js'%}"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let elems = document.querySelectorAll('.sidenav');
+        let instances = M.Sidenav.init(elems, options);
+  });
+  </script>
 </body>
 </html>

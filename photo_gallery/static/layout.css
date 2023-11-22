@@ -1,0 +1,11 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+html{
+    font-family: 'Pretendard Variable', sens-serif, serif !important;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+}
