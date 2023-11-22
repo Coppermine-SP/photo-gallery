@@ -1,0 +1,55 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+@import url('https://fonts.googleapis.com/css?family=Space Mono');
+
+html{
+    font-family: 'Pretendard Variable', sens-serif, serif !important;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+}
+
+/* navigation area */
+nav {
+    height: 45px;
+    line-height: 45px;
+    /*font-family: 'Space Mono', monospace;*/
+    font-weight: 200;
+    background-color: #101010;
+    transition-duration: 0.1s;
+}
+
+nav a{
+    transition-duration: 0.1s;
+}
+
+nav a:hover{
+    color: deepskyblue;
+}
+
+/* for 45px nav height */
+.navbar-fixed{
+    height: 45px;
+}
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 45px;
+    line-height: 45px;
+}
+
+nav .button-collapse i {
+    height: 45px;
+    line-height: 45px;
+}
+
+nav .brand-logo {
+    font-size: 1.6rem;
+}
+
+@media only screen and (min-width: 601px){
+    nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
+        height: 45px;
+        line-height: 45px;
+    }
+}
