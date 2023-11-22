@@ -1,5 +1,50 @@
 {% extends "layout.html" %}
+{% load static %}
 
-{%  block content %}
-<span>index.html 입니다. 반갑습니다.</span>
+{% block style %}
+    <link rel="stylesheet" href="{% static 'mainpage/slider.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'mainpage/index.css' %}" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    <div class="slider-container">
+        <div class="slider-overlay"></div>
+        <div class="slideshow">
+            {% for i in "1234" %}
+                <div class="slideshow-image"
+                     style="background-image: url('{% get_static_prefix %}image/background/{{ i }}.jpg')">
+                    <img src="">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider-content-wrapper">
+        <div class="slider-content">
+            <h3>빛을 담다, 클라우드인터렉티브.</h3>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <h5>Main Page</h5>
+        <hr>
+        <p>이 곳에서 모든 작업이 시작됩니다.</p>
+        <div style="height: 500px"></div>
+        <div style="height: 500px"></div>
+        <div style="height: 500px"></div>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script>
+        //매뉴가 슬라이더 그라디언트에 있을 때, 그림자 제거로 그라디언트와 일체화.
+        $(document).ready(function () {
+            $('nav').addClass('no-shadow');
+        });
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop() > 10) {
+                $('nav').removeClass('no-shadow');
+            } else {
+                $('nav').addClass('no-shadow');
+            }
+        });
+    </script>
 {% endblock %}
