@@ -20,3 +20,4 @@
 ## Dependencies
 - **MaterializeCSS** - https://github.com/Dogfalo/materialize
 - **Exif.js** - https://github.com/exif-js/exif-js
+- **hangle.js** - https://github.com/blurfx/hangul.js
