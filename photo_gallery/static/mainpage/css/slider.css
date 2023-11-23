@@ -1,9 +1,3 @@
-.no-shadow {
-    box-shadow: none !important;
-    padding-top: 10px;
-
-}
-
 .slider-container {
     position: relative;
     width: 100vw;
