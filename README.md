@@ -5,8 +5,8 @@
 
 ### Table of Contents
 - [How to Use](#how-to-use)
-- [Copyright Notice](#copyright-notice)
 - [Dependencies](#dependencies)
+- [Copyright Notice](#copyright-notice)
 - [Showcase](#showcase)
 
 ## How to Use
@@ -35,6 +35,10 @@ Project Settings (Ctrl + Alt + S)에서 Language & Frameworks > Django 페이지
 새 Django Server Configuration을 Run Configurations에 추가하고 실행합니다.
 
 
+## Dependencies
+- **MaterializeCSS** - https://github.com/Dogfalo/materialize
+- **Exif.js** - https://github.com/exif-js/exif-js
+- **type-hangul** - https://github.com/SDuck4/type-hangul/
 
 ## Copyright Notice
 **이 프로젝트에 사용된 모든 샘플 이미지는 저작권으로 보호되는 이미지입니다.**
@@ -45,10 +49,8 @@ Project Settings (Ctrl + Alt + S)에서 Language & Frameworks > Django 페이지
   
 - 사진에 등장하는 모든 인물에 대한 초상권은 촬영 당시 본인의 명시적인 허락을 받아 취득되었습니다.
   
-## Dependencies
-- **MaterializeCSS** - https://github.com/Dogfalo/materialize
-- **Exif.js** - https://github.com/exif-js/exif-js
-- **type-hangul** - https://github.com/SDuck4/type-hangul/
 
 ## Showcase
+
+
 
