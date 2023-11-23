@@ -19,46 +19,59 @@
 </head>
 <body>
 <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper container">
-      <a href="#!" class="brand-logo">
-          <div class="valign-wrapper">
-              <img class="logo" src="{%  static 'image/logo.png' %}">
-              <span>Gallery</span>
-          </div>
-      </a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">About</a></li>
-        <li><a href="badges.html">Explore</a></li>
-        <li><a href="collapsible.html">People</a></li>
-        <li><a href="mobile.html">Tech</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo">
+                <div class="valign-wrapper">
+                    <img class="logo" src="{% static 'image/logo.png' %}">
+                    <span>Gallery</span>
+                </div>
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/about">Explore</a></li>
+                <li><a href="/list?category=landscape">Landscapes</a></li>
+                <li><a href="/list?category=portrait">Portraits</a></li>
+                <li><a href="/list?category=innovation">Innovations</a></li>
+            </ul>
+        </div>
+    </nav>
 </div>
-  <ul class="sidenav" id="mobile-demo">
+<ul class="sidenav" id="mobile-demo">
     <li><a href="sass.html">Sass</a></li>
     <li><a href="badges.html">Components</a></li>
     <li><a href="collapsible.html">Javascript</a></li>
     <li><a href="mobile.html">Mobile</a></li>
-  </ul>
-  {% block content %}
-  {% endblock %}
+</ul>
+{% block content %}
+{% endblock %}
 
-  <!-- vendors js -->
-  <script src="{% static 'vendors/materialize/js/materialize.min.js'%}"></script>
-  <script src="{% static 'vendors/jquery/jquery.min.js'%}"></script>
+<footer>
+    <div class="container">
+        <p>Copyright (C) 2023 손유찬, 임해주, 강민규, 이동민.</p>
+        <div class="valign-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
+            </svg>
+            <span>See this repository on Github:</span>
+            <a href="https://github.com/Coppermine-SP/photo-gallery">Coppermine-SP/photo-gallery</a>
+        </div>
+    </div>
+</footer>
+<!-- vendors js -->
+<script src="{% static 'vendors/materialize/js/materialize.min.js' %}"></script>
+<script src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
 
-  <!-- layout-specific js -->
-  <script>
-       $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-  </script>
+<!-- layout-specific js -->
+<script>
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
+</script>
 
-  <!-- page-specific js -->
-  {% block script %}
-  {% endblock %}
+<!-- page-specific js -->
+{% block script %}
+{% endblock %}
 </body>
 </html>

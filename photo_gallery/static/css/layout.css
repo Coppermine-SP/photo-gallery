@@ -11,6 +11,27 @@ body{
     color: #f0f0f0;
 }
 
+
+/* footer area */
+footer{
+    background-color: #101010;
+    height: 100px;
+    padding: 10px;
+    color: #adadad;
+}
+
+footer svg{
+    margin-right: 5px;
+}
+
+footer a{
+    margin-left: 5px;
+}
+
+footer p{
+    margin-bottom: 5px;
+}
+
 /* navigation area */
 nav {
     height: 45px;
