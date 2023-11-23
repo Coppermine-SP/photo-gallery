@@ -21,28 +21,15 @@
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper container">
-            <a href="/" class="brand-logo">
-                <div class="valign-wrapper">
-                    <img class="logo" src="{% static 'image/logo.png' %}">
-                    <span>Gallery</span>
-                </div>
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/about">Explore</a></li>
-                <li><a href="/list?category=landscape">Landscapes</a></li>
-                <li><a href="/list?category=portrait">Portraits</a></li>
-                <li><a href="/list?category=innovation">Innovations</a></li>
+            <ul>
+                <li><a href="/about"><strong>E</strong>xplore</a></li>
+                <li><a href="/list?category=landscape"><strong>L</strong>andscapes</a></li>
+                <li><a href="/list?category=portrait"><strong>P</strong>ortraits</a></li>
+                <li><a href="/list?category=innovation"><strong>I</strong>nnovations</a></li>
             </ul>
         </div>
     </nav>
 </div>
-<ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-</ul>
 {% block content %}
 {% endblock %}
 
