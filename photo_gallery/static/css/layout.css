@@ -48,6 +48,17 @@ nav .brand-logo {
     font-size: 1.6rem;
 }
 
+.brand-logo img{
+    width: 28px;
+}
+
+.brand-logo span{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+
+}
+
 @media only screen and (min-width: 601px){
     nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
         height: 45px;

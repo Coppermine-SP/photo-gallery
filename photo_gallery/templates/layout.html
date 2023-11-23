@@ -15,13 +15,18 @@
     <!-- page-specific css -->
     {% block style %}
     {% endblock %}
-    <title>Title</title>
+    <title>Gallery</title>
 </head>
 <body>
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper container">
-      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#!" class="brand-logo">
+          <div class="valign-wrapper">
+              <img class="logo" src="{%  static 'image/logo.png' %}">
+              <span>Gallery</span>
+          </div>
+      </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html">About</a></li>
