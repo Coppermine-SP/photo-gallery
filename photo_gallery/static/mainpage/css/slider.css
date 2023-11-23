@@ -22,7 +22,7 @@
 
 .slider-content-wrapper {
     background: rgb(10, 10, 10);
-    background: linear-gradient(180deg, rgba(16, 16, 16, 1) 1%, rgba(255, 255, 255, 0) 30%);
+    background: linear-gradient(180deg, rgba(16, 16, 16, 1) 2%, rgba(255, 255, 255, 0) 30%);
     position: absolute;
     bottom: 0;
     width: 100%;
