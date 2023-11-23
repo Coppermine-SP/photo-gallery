@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'mainpage/slider.css' %}" type="text/css"/>
-    <link rel="stylesheet" href="{% static 'mainpage/index.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'mainpage/css/slider.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'mainpage/css/index.css' %}" type="text/css"/>
 {% endblock %}
 
 {% block content %}
@@ -12,23 +12,27 @@
         <div class="slideshow">
             {% for i in "1234" %}
                 <div class="slideshow-image"
-                     style="background-image: url('{% get_static_prefix %}image/background/{{ i }}.jpg')">
+                     style="background-image: url('{% get_static_prefix %}mainpage/image/background/{{ i }}.jpg')">
                 </div>
             {% endfor %}
         </div>
         <div class="slider-content-wrapper">
             <div class="slider-content">
                 <h3 id="main-text"></h3>
+                <a class="valign-wrapper find_more">자세히 알아보기 <i class="material-icons">chevron_right</i></a>
             </div>
         </div>
     </div>
     <div class="container" style="height: 800px;">
+    <br>
+        <h4>취향에 따라 감상하세요.</h4>
     </div>
 
 {% endblock %}
 {% block script %}
     <script src="{% static 'vendors/type-hangle/type-hangul.bundle.js' %}"></script>
     <script>
+
         //slider에 출력할 텍스트 목록
         const texts = [
             "빛을 담다, 인생을 담다.",
