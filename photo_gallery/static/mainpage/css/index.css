@@ -14,15 +14,4 @@
 
 }
 
-/* layout nav override */
-nav{
-    background-color: rgba(5,5,5, 0.7) !important;
-    backdrop-filter: blur(10px);
-}
 
-.no-shadow {
-    background-color: #101010 !important;
-    box-shadow: none !important;
-    padding-top: 10px;
-
-}

@@ -1,0 +1,49 @@
+/* layout nav override */
+nav{
+    background-color: rgba(5,5,5, 0.7) !important;
+    backdrop-filter: blur(10px);
+}
+
+.no-shadow {
+    background-color: #101010 !important;
+    box-shadow: none !important;
+    padding-top: 10px;
+
+}
+
+.header-container{
+    position: relative;
+    display: flex;
+    ;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 300px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 4px 4px -4px black;
+}
+
+.header-gradient {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(10, 10, 10);
+    background: linear-gradient(180deg, rgba(16, 16, 16, 1) 2%, rgba(255, 255, 255, 0) 50%);
+    backdrop-filter: brightness(0.5) blur(5px);
+}
+
+.title{
+    z-index: 10;
+    margin-top: 120px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.description{
+    z-index: 10;
+    margin-top: 0;
+    font-weight: 200;
+}

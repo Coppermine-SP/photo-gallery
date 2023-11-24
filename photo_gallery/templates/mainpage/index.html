@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block style %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'mainpage/css/slider.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'mainpage/css/index.css' %}" type="text/css"/>
 {% endblock %}
@@ -30,6 +31,7 @@
 
 {% endblock %}
 {% block script %}
+    <script src="{% static 'js/header.js' %}"></script>
     <script src="{% static 'vendors/type-hangle/type-hangul.bundle.js' %}"></script>
     <script>
 
@@ -41,7 +43,6 @@
         const randomIndex = Math.floor(Math.random() * texts.length);
 
         $(document).ready(function () {
-            $('nav').addClass('no-shadow');
             document.getElementById("main-text").innerText = texts[randomIndex];
             TypeHangul.type('#main-text', {
                 intervalType: 80,
@@ -49,15 +50,6 @@
             });
 
 
-        });
-
-        //매뉴가 슬라이더 그라디언트에 있을 때, 그림자 제거로 그라디언트와 일체화.
-        $(window).on('scroll', function () {
-            if ($(window).scrollTop() > 10) {
-                $('nav').removeClass('no-shadow');
-            } else {
-                $('nav').addClass('no-shadow');
-            }
         });
     </script>
 {% endblock %}
