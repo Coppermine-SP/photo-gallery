@@ -22,7 +22,7 @@
     <nav>
         <div class="nav-wrapper container">
             <ul>
-                <li><a href="/about"><strong>E</strong>xplore</a></li>
+                <li><a href="/"><strong>E</strong>xplore</a></li>
                 <li><a href="/list?category=landscape"><strong>L</strong>andscapes</a></li>
                 <li><a href="/list?category=portrait"><strong>P</strong>ortraits</a></li>
                 <li><a href="/list?category=innovation"><strong>I</strong>nnovations</a></li>
@@ -35,7 +35,10 @@
 
 <footer>
     <div class="container">
-        <p>Copyright (C) 2023 손유찬, 임해주, 강민규, 이동민.</p>
+        <div class="valign-wrapper" style="margin-top: 10px; margin-bottom: 5px">
+            <span>Copyright (C) 2023 손유찬, 임해주, 강민규, 이동민.</span>
+            <a href="/contributors">Contributors</a>
+        </div>
         <div class="valign-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                  viewBox="0 0 16 16">
@@ -52,9 +55,6 @@
 
 <!-- layout-specific js -->
 <script>
-    $(document).ready(function () {
-        $('.sidenav').sidenav();
-    });
 </script>
 
 <!-- page-specific js -->
