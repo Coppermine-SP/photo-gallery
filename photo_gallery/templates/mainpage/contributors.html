@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    <div class="header-container" style="background-image: url('{% static 'mainpage/image/contributors/header.jpg' %}')">
+        <h3 class="title">Contributors</h3>
+        <h5 class="description">이 페이지를 만든 사람들.</h5>
+        <div class="header-gradient"></div>
+    </div>
+    <div class="container" style="height: 600px">
+
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/header.js' %}"></script>
+{% endblock %}
