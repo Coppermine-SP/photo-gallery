@@ -1,0 +1,39 @@
+.card-panel{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.picture{
+    width: 100px;
+}
+
+.profile{
+    flex-grow: 1;
+    height: 100%;
+}
+
+.profile>h5{
+    margin-top: 0;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.profile>h6{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.profile>i{
+    display: block;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.profile li{
+    margin: 10px 0;
+    font-weight: 300;
+    list-style-type: disc !important;
+    list-style-position: inside;
+}
