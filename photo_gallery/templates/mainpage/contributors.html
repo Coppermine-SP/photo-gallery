@@ -3,6 +3,7 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'mainpage/css/contributors.css' %}" type="text/css"/>
 {% endblock %}
 
 {% block content %}
@@ -11,8 +12,80 @@
         <h5 class="description">이 페이지를 만든 사람들.</h5>
         <div class="header-gradient"></div>
     </div>
-    <div class="container" style="height: 600px">
+    <div class="container">
+        <div class="card-panel grey darken-3 z-depth-1" style="">
+          <div class="row">
+            <div class="col picture">
+              <img src="{% static 'mainpage/image/contributors/copperminesp_profile.jpg' %}" alt="" class="circle responsive-img">
+            </div>
+            <div class="col profile">
+                <h5>손유찬 (Coppermine-SP)</h5>
+                <h6>국립창원대학교 정보통신공학과</h6>
+                <i>"사람과 세상을 연결하는 기술."</i>
+                <h6><strong>Software Engineer</strong></h6>
+                <ul>
+                    <li>Full-stack Software Development (.NET, C++, Python)</li>
+                    <li>Web Application Development (Microsoft ASP.NET MVC)</li>
+                    <li>Server Engineering (Windows Server, Microsoft SQL Server)</li>
+                    <li>IP-Network Infrastructure Engineering (UniFi, Cisco)</li>
+                </ul>
+            </div>
+          </div>
+        </div>
 
+        <div class="card-panel grey darken-3 z-depth-1" style="">
+          <div class="row">
+            <div class="col picture">
+              <img src="{% static 'mainpage/image/contributors/privet_profile.jpg' %}" alt="" class="circle responsive-img">
+            </div>
+            <div class="col profile">
+                <h5>임해주 (Privet)</h5>
+                <h6>국립창원대학교 정보통신공학과</h6>
+                <i>"노무현 중력 523배."</i>
+                <h6><strong>Security Expert</strong></h6>
+                <ul>
+                    <li>Cryptography and Secure Communication Protocols</li>
+                    <li>Cybersecurity Risk Assessment and Management</li>
+                    <li>Incident Response and Forensic Analysis</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-panel grey darken-3 z-depth-1" style="">
+          <div class="row">
+            <div class="col picture">
+              <img src="{% static 'mainpage/image/contributors/mingyukang0503_profile.jpeg' %}" alt="" class="circle responsive-img">
+            </div>
+            <div class="col profile">
+                <h5>강민규 (MingyuKang0503)</h5>
+                <h6>국립창원대학교 정보통신공학과</h6>
+                <i>"코딩하는 세상."</i>
+                <h6><strong>Software Enginner</strong></h6>
+                <ul>
+                    <li>Full-Stack Developer (Vue.js, Node.js)</li>
+                    <li>Database Engineer (RDBMS, NoSQL)</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+     <div class="card-panel grey darken-3 z-depth-1" style="">
+          <div class="row">
+            <div class="col picture">
+              <img src="{% static 'mainpage/image/contributors/cg1119_profile.jpg' %}" alt="" class="circle responsive-img">
+            </div>
+            <div class="col profile">
+                <h5>이동민 (cg1119)</h5>
+                <h6>국립창원대학교 정보통신공학과</h6>
+                <i>"노무현 중력 523배."</i>
+                <h6><strong>Music Composer</strong></h6>
+                <ul>
+                    <li>Music Composition and Arrangement</li>
+                    <li>Music Theory and History Knowledge</li>
+                    <li>Sound Design and Audio Engineering (VSTs, Mixing, Mastering)</li>
+                </ul>
+            </div>
+          </div>
+        </div>
     </div>
 {% endblock %}
 
