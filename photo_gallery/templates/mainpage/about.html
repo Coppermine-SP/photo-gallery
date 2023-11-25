@@ -1,14 +1,55 @@
 {% extends "layout.html" %}
 {% load static %}
 
+
 {% block style %}
     <link rel="stylesheet" href="{% static 'mainpage/css/about.css' %}" type="text/css"/>
 {% endblock %}
 
-{% block content %}
 
+{% block content %}
+<main>
+  <div class="intro">
+    <h1>About Us</h1>
+    <p>I am a web developer and I love to take pictures.</p>
+    <button id="myButton">Learn More</button>
+  </div>
+  <div class="achievements">
+    <div class="work">
+      <i class="fas fa-atom"></i>
+      <p class="work-heading">Landscapes</p>
+      <p class="work-text">풍경의 아름다움을 함께 탐험해보세요. 멋진 자연 풍경들을 담은 최신 사진 컬렉션이 있습니다. 자연의 웅장함과 아름다움을 전하며, 여러분을 여행의 감각적인 세계로 안내합니다.</p>
+    </div>
+    <div class="work">
+      <i class="fas fa-skiing"></i>
+      <p class="work-heading">Portraits</p>
+      <p class="work-text">초상화 컬렉션에서는 다채로운 모습과 감정을 담아낸 아름다운 인물 사진들을 소개하고 있습니다. 함께 감상해보시고, 그 순간의 아름다움에 빠져보세요.</p>
+    </div>
+    <div class="work">
+      <i class="fas fa-ethernet"></i>
+      <p class="work-heading">Innovations</p>
+      <p class="work-text">현대 기술의 아름다움과 창의성을 담아낸 이미지들로 혁신의 시각적 매력을 느껴보세요. 혁신적인 아이디어와 기술의 미래를 탐험하는 여정을 함께할 수 있습니다.</p>
+    </div>
+  </div>
+  <div class="about-me">
+    <div class="about-me-text">
+      <h2>About Photograper</h2>
+      <p>"뛰어난 사진가 손유찬은 감각적인 시각으로 순간을 포착하여 일상을 미적인 표현으로 해석합니다."<br><br>
+          "그의 작품은 자연과 인간의 조화로움을 감각적으로 담아내어 관객들에게 감동과 영감을 전합니다."</p>
+    </div>
+    <img src="/static/mainpage/image/background/3.jpg" alt="me">
+  </div>
+</main>
 {% endblock %}
+
 
 {% block script %}
     <script src="{% static 'vendors/type-hangle/type-hangul.bundle.js' %}"></script>
+    <script>
+    document.getElementById("myButton").addEventListener("click", function() {
+    // 이동할 페이지의 URL을 지정 ( contributors 페이지로 넘어갈수있게 추후 페이지 전체 완성후 수정 )
+    var destinationPage = "https://example.com";
+    window.location.href = destinationPage;
+    });
+    </script>
 {% endblock %}
