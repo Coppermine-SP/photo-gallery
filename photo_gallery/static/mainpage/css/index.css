@@ -91,6 +91,12 @@
 
 }
 
+@media screen and (max-width: 425px){
+    .section-title{
+        font-size: 28px;
+    }
+}
+
 
 
 
