@@ -24,9 +24,37 @@
             </div>
         </div>
     </div>
-    <div class="container" style="height: 800px;">
-    <br>
-        <h4>취향에 따라 감상하세요.</h4>
+    <div class="container extended">
+        <h4 class="section-title">주제별 컬렉션을 탐험하세요.</h4>
+        <div class="cards-wrap">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'mainpage/image/index/landscape.jpg' %}">
+                    <span class="card-title">Landscapes</span>
+                </div>
+                <div class="card-content">
+                    <p>경관의 아름다움을 탐험하십시오.<br> 자연과 도시의 웅장함과 아름다움을 선사합니다.</p>
+                </div>
+            </div>
+             <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'mainpage/image/index/portrait.jpg' %}">
+                    <span class="card-title">Portraits</span>
+                </div>
+                <div class="card-content">
+                    <p>다양한 사람들의 모습,<br> 그리고 그들의 이야기를 전달합니다.</p>
+                </div>
+            </div>
+             <div class="card">
+                <div class="card-image">
+                    <img src="{% static 'mainpage/image/index/innovation.jpg' %}">
+                    <span class="card-title">Innovations</span>
+                </div>
+                <div class="card-content">
+                    <p>과학 기술이 선사하는 아름다움,<br> 최신 기술을 소개합니다.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
