@@ -53,7 +53,7 @@
 }
 
 .card img{
-    filter: brightness(0.5);
+    -webkit-filter: brightness(70%);
     object-fit: cover;
     transition: 0.3s;
 }
