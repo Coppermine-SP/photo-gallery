@@ -16,7 +16,7 @@ body{
 /* footer area */
 footer{
     background-color: #101010;
-    height: 100px;
+    min-height: 100px;
     padding: 10px;
     color: #adadad;
 }
@@ -85,5 +85,19 @@ nav .button-collapse i {
     }
     .nav-wrapper{
         justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    footer .valign-wrapper{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    footer a{
+        margin: 0;
+    }
+    footer svg{
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 }
