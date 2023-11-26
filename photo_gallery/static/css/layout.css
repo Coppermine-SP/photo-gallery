@@ -3,6 +3,7 @@
 
 html{
     font-family: 'Pretendard Variable', sens-serif, serif !important;
+    overscroll-behavior-y: none;
 }
 
 body{
