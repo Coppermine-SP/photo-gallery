@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block style %}
+    <style>
+        #content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: calc(100vh - 145px);
+        }
+
+        .material-icons {
+            font-size: 64px;
+        }
+
+        h5 {
+            font-weight: 300;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div id="content">
+            <i class="material-icons">warning</i>
+            <h5>{{ errstr }}</h5>
+        </div>
+    </div>
+{% endblock %}
