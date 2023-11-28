@@ -1,17 +1,19 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+:root {
+  color-scheme: dark;
+}
 
 html{
     font-family: 'Pretendard Variable', sens-serif, serif !important;
+    overflow-x: hidden !important;
     overscroll-behavior-y: none;
 }
 
 body{
-    overflow-x: hidden;
     background-color: #2e2e2e;
     color: #f0f0f0;
     caret-color: transparent;
 }
-
 
 /* footer area */
 footer{
