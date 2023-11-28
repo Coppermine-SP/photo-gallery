@@ -1,18 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=East Sea Dokdo');
 body>.container{
     min-height: calc(100vh - 145px);
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .double-column{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
 .responsive-img{
     width: 100px;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.motto{
+    width: 100%;
+    font-family: 'East Sea Dokdo',serif;
+    font-size: 38px;
+    margin: 0;
+}
+
+.profile_pic{
+    width: 100%;
 }
 
 .double-column li{
