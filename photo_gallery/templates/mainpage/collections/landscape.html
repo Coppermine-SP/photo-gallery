@@ -1,10 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}
+    Gallery :: Landscape
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'mainpage/css/collections.css' %}" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    <div class="image-container">
+        <div class="header-gradient">
+            <div class="container">
+                <div class="collection-info">
+                    <h3>Landscapes</h3>
+                    <h5>경관의 아름다움, 웅장함을 탐험하십시오.</h5>
+                </div>
+            </div>
+        </div>
+        <img class="background" src="{% static 'mainpage/image/collections/landscape/background.jpg' %}">
+    </div>
+    <div class="container">
+        <h4 class="collection-title">자연과 도시, 그 둘 사이의 조화를 찾습니다.</h4>
+        <blockquote class="collection-description">
+            컬렉션 'Landscapes'는 끝없이 펼쳐진 아름다운 바다와 산부터, 도심 속 하늘을 찌를 듯한 빌딩까지 다양한 풍경을 주제로 하고 있습니다.<br>
+            아래에서 컬렉션의 대표작을 만나보세요.
+
+        </blockquote>
+        <div class="card-panel grey darken-4 sample-container">
+            <img class="materialboxed" src="{% static 'mainpage/image/collections/landscape/sample-1.jpg' %}">
+            <div class="sample-description">
+                <h5>제주국제공항의 폭설</h5>
+                <blockquote>
+                    2021년 12월에 제주국제공항에 내려진 폭설로 인해 많은 사람들이 큰 불편을 겪었지만,<br>얼어있는 에어사이드는 상당한 매력을 뽐내고 있다.
+                </blockquote>
+                <div class="metadata grey darken-3">
+                    <div class="valign-wrapper">
+                        <i class="material-icons">camera_alt</i>
+                        ILCE-7RM4 (Sony FE 24mm F1.4 GM)
+                    </div>
+                    <div class="valign-wrapper">
+                        <i class="material-icons">camera</i>
+                        F8.0, 1/250
+                    </div>
+                    <div class="valign-wrapper">
+                        <i class="material-icons">movie_filter</i>
+                        ISO 100
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-panel grey darken-4 sample-container reversed">
+            <img class="materialboxed" src="{% static 'mainpage/image/collections/landscape/sample-2.jpg' %}">
+            <div class="sample-description">
+                <h5>4월의 주남저수지</h5>
+                <blockquote>
+                    4월의 주남저수지는 푸르다.<br>물가의 부드러운 빛은 마음을 평화롭게 만든다.
+                </blockquote>
+                <div class="metadata grey darken-3">
+                    <div class="valign-wrapper">
+                        <i class="material-icons">camera_alt</i>
+                        ILCE-7RM4 (Sony FE 24mm F1.4 GM)
+                    </div>
+                    <div class="valign-wrapper">
+                        <i class="material-icons">camera</i>
+                        F8.0, 1/1250
+                    </div>
+                    <div class="valign-wrapper">
+                        <i class="material-icons">movie_filter</i>
+                        ISO 160
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-panel grey darken-4 sample-container">
+            <img class="materialboxed" src="{% static 'mainpage/image/collections/landscape/sample-3.jpg' %}">
+            <div class="sample-description">
+                <h5>서울의 야경</h5>
+                <blockquote>
+                    롯데월드타워에서 바라보는 해질녘 서울의 모습.
+                </blockquote>
+                <div class="metadata grey darken-3">
+                    <div class="valign-wrapper">
+                        <i class="material-icons">camera_alt</i>
+                        ILCE-7RM4 (Sony FE 24mm F1.4 GM)
+                    </div>
+                    <div class="valign-wrapper">
+                        <i class="material-icons">camera</i>
+                        F5.6, 3.2s
+                    </div>
+                    <div class="valign-wrapper">
+                        <i class="material-icons">movie_filter</i>
+                        ISO 100
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/header.js' %}"></script>
+{% endblock %}
