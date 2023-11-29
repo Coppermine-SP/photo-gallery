@@ -118,7 +118,7 @@ strong{
     margin-right: 5px;
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 500px){
     .collection-info>h5{
         font-size: 20px;
     }
@@ -127,6 +127,9 @@ strong{
     }
     .collection-description{
         font-size: 16px;
+    }
+    .image-container .container{
+    padding-bottom: 200px;
     }
 }
 
