@@ -33,7 +33,7 @@
         <div class="cards-wrap">
             <div class="card">
                 <div class="card-image">
-                    <img src="{% static 'mainpage/image/index/landscape.jpg' %}">
+                    <img src="{% static 'mainpage/image/index/landscape.jpg' %}" onclick="window.location.href = '/collections/landscape'">
                     <span class="card-title">Landscapes</span>
                 </div>
                 <div class="card-content">
@@ -41,7 +41,7 @@
                 </div>
             </div>
              <div class="card">
-                <div class="card-image" onclick="window.location.href = '/list?category=portrait'">
+                <div class="card-image" onclick="window.location.href = '/collections/portrait'">
                     <img src="{% static 'mainpage/image/index/portrait.jpg' %}">
                     <span class="card-title">Portraits</span>
                 </div>
@@ -51,7 +51,7 @@
             </div>
              <div class="card">
                 <div class="card-image">
-                    <img src="{% static 'mainpage/image/index/innovation.jpg' %}">
+                    <img src="{% static 'mainpage/image/index/innovation.jpg' %}" onclick="window.location.href = '/collections/innovation'">
                     <span class="card-title">Innovations</span>
                 </div>
                 <div class="card-content">
