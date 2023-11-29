@@ -29,3 +29,12 @@ def error(request, errid=0):
             errstr = f"{errid}: {errList[errid]}"
 
     return render(request, 'mainpage/error.html', {'errstr': errstr})
+
+def landscape(request):
+    return render(request, 'mainpage/collections/landscape.html')
+
+def portrait(request):
+    return render(request, 'mainpage/collections/portrait.html')
+
+def innovation(request):
+    return render(request, 'mainpage/collections/innovation.html')
