@@ -31,7 +31,7 @@
 
 .collection-description{
     margin-top: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     font-size: 20px;
     font-weight: 300;
 }
@@ -66,29 +66,24 @@ strong{
 
 /* samples */
 .sample-container{
-    width: 100%;
-    height: 350px;
     display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
     margin-bottom: 80px;
 }
 
-.reversed{
-    flex-direction: row-reverse;
-}
-
-.reversed>.sample-description{
-    padding-left: 0;
-    padding-right: 30px;
-}
-
 .sample-container img{
-    height: 100%
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .sample-description{
     margin-top: auto;
     padding-left: 30px;
     flex-grow: 1;
+    padding-left: 0;
+    padding-right: 0 !important;
 }
 
 .sample-description>h5{
@@ -133,28 +128,8 @@ strong{
     }
 }
 
-@media only screen and (max-width: 1200px){
-    .sample-container{
-        flex-direction: column;
-        height: auto;
-    }
-
-    .sample-container img{
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .sample-description{
-        padding-left: 0;
-        padding-right: 0 !important;
-    }
-}
-
 @media only screen and (max-width: 1650px){
     .sample-description br{
         display: none;
     }
 }
-
-
-
