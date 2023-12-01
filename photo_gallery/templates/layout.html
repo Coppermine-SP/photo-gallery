@@ -1,23 +1,7 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- vendors css -->
-    <link rel="stylesheet" href="{% static 'vendors/materialize/css/materialize.min.css' %}" type="text/css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- layout-specific css -->
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}" type="text/css"/>
-
-    <!-- page-specific css -->
-    {% block style %}
-    {% endblock %}
-</head>
-<body>
+{% block layout %}
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper container">
@@ -61,5 +45,5 @@
 <!-- page-specific js -->
 {% block script %}
 {% endblock %}
-</body>
-</html>
+
+{% endblock %}
