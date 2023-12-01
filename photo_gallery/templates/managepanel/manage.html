@@ -1,10 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}
+    Gallery :: Manage
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'managepanel/css/manage.css' %}" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    <div id="top-items">
+        <div class="grey darken-4">
+            <div class="container" style="padding-top: 30px; padding-bottom: 30px;margin-bottom: 80px">
+                <h4 class="page-title">사이트 관리</h4>
+            </div>
+        </div>
+        <div class="container">
+            <div id="toolbar" class="valign-wrapper">
+                <a id="add-record" class="waves-effect waves-light btn modal-trigger" href="#add-record-modal"><i class="material-icons left">add</i>레코드 추가</a>
+                <select id="selected-category">
+                    <option value="*" disabled>카테고리 선택</option>
+                    <option value="landscape">Landscapes</option>
+                    <option value="portrait">Portraits</option>
+                    <option value="innovation">Innovations</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% if rowCount == 0 %}
+            <div id="no-record">
+                <i class="material-icons">warning</i>
+                <h5>레코드가 없습니다.</h5>
+            </div>
+        {% else %}
+
+        {% endif %}
+    </div>
+
+    <div id="add-record-modal" class="modal">
+        <div class="modal-content">
+            <iframe src="/upload"></iframe>
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script>
+        $(document).ready(function () {
+            $("#selected-category").val("{{ category }}")
+                .attr("selected", "selected");
+        });
+    </script>
+{% endblock %}
