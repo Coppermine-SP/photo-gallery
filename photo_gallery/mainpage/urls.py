@@ -8,5 +8,5 @@ urlpatterns = [
 	path('error', views.error, name='error'),
 	path('collections/landscape', views.landscape, name='landscape'),
 	path('collections/portrait', views.portrait, name='portrait'),
-	path('collections/landscape', views.innovation, name='innovation'),
+	path('collections/innovation', views.innovation, name='innovation'),
 ]
