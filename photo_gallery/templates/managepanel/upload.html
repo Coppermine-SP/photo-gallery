@@ -1,10 +1,77 @@
 {% extends "base.html" %}
 
 {% block style %}
+    <style>
+        #drop-zone {
+            width: 80%;
+            margin: 0 auto;
+            height: 250px;
+            border: 2px dashed #a3a3a3;
+            margin-bottom: 50px;
+            background: rgba(204, 204, 204, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #image-name {
+            color: #a8a8a8;
+        }
+    </style>
 {% endblock %}
 
 {% block layout %}
-    <h5 style="margin-top: 0">새 레코드 생성</h5>
-    <form method="POST">
+    <h5 style="margin-top: 0; margin-bottom: 50px">새 레코드 생성</h5>
+    <form method="POST" action="/upload">
+        {% csrf_token %}
+        <input name="image" type="file" id="image-upload" accept="image/jpg" required style="display: none">
+        <div id="drop-zone">
+            <i class="material-icons" style="font-size: 56px">insert_drive_file</i>
+            <h5>Drag & Drop</h5>
+            <a id="upload-btn" class="waves-effect waves-light indigo darken-3 btn" style="margin-top: 15px;"><i
+                    class="material-icons left">add</i>수동 업로드</a>
+            <p id="image-name">파일이 업로드 되지 않았습니다.</p>
+        </div>
+        <div class="input-field">
+            <textarea name="description" id="description" class="materialize-textarea"></textarea>
+            <label for="description">이미지 설명</label>
+        </div>
+        <a id="submit" class="waves-effect waves-light btn right modal-close disabled" style="margin-top: 15px;">
+            제출</a>
     </form>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $("#upload-btn").on("click", function () {
+            $("#image-upload").click();
+        })
+
+        $("#drop-zone").on("dragover drop", function (e) {
+            e.preventDefault();  // allow dropping and don't navigate to file on drop
+        }).on("drop", function (e) {
+            $("#image-upload")
+                .prop("files", e.originalEvent.dataTransfer.files)
+                .change()
+        });
+
+        $("#image-upload").on("change", function (e) {
+            let file = e.target.files[0].name.toLowerCase();
+            if (file.endsWith(".jpg") || file.endsWith(".jpeg")) {
+                $("#image-name").text(e.target.files[0].name);
+                $("#submit").removeClass("disabled");
+            } else {
+                alert("오직 JPG 형식의 파일만 지원합니다.");
+                e.target.value = '';
+                $("#image-name").text("파일이 업로드되지 않았습니다.");
+                $("#submit").addClass("disabled");
+            }
+        });
+
+        $("#submit").click(function(e){
+            $("form").submit();
+            window.parent.closeModal();
+        });
+    </script>
 {% endblock %}
