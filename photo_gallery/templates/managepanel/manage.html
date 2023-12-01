@@ -49,8 +49,14 @@
 {% block script %}
     <script>
         $(document).ready(function () {
-            $("#selected-category").val("{{ category }}")
-                .attr("selected", "selected");
+            $("#selected-category").val("{{ category }}");
+            M.AutoInit();
         });
+
+        function closeModal(){
+            var instance = M.Modal.getInstance(document.getElementById("add-record-modal"));
+            instance.close();
+            navigator.reload();
+        }
     </script>
 {% endblock %}
