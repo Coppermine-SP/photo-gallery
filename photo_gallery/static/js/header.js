@@ -8,6 +8,7 @@ function dynamicNav() {
 }
 $(document).ready(function () {
     dynamicNav();
+    M.AutoInit();
 });
 
 $(window).on('scroll', function () {
