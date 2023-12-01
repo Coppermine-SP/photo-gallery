@@ -1,3 +1,7 @@
+.extended{
+    max-width: 1700px !important;
+}
+
 .header-gradient{
     height: 100vh;
     backdrop-filter: brightness(0.5) !important;
@@ -65,11 +69,20 @@ strong{
 }
 
 /* samples */
+.sample-wrapper{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .sample-container{
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    height: auto;
-    width: 100%;
+    max-width: 48%;
+    min-width: 450px;
+    margin-right: 15px;
     margin-bottom: 80px;
 }
 
@@ -80,9 +93,8 @@ strong{
 
 .sample-description{
     margin-top: auto;
-    padding-left: 30px;
-    flex-grow: 1;
     padding-left: 0;
+    flex-grow: 1;
     padding-right: 0 !important;
 }
 
@@ -133,3 +145,40 @@ strong{
         display: none;
     }
 }
+
+@media only screen and (max-width: 1345px){
+    .sample-container{
+        max-width: 100%;
+    }
+    .sample-wrapper{
+        flex-direction: column;
+    }
+}
+
+/* portrait page */
+.portrait-sample-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    margin-bottom: 50px;
+
+}
+
+.portrait-sample-container>.material-placeholder{
+    width: 400px;
+    margin-bottom: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.portrait-sample-container>.material-placeholder>img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1216px){
+    .portrait-sample-container>.material-placeholder{
+        width: 85%;
+    }
+}
+
