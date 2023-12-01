@@ -148,37 +148,9 @@ strong{
 
 @media only screen and (max-width: 1345px){
     .sample-container{
-        max-width: 100%;
+        max-width: 100% !important;
     }
     .sample-wrapper{
         flex-direction: column;
     }
 }
-
-/* portrait page */
-.portrait-sample-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: wrap;
-    margin-bottom: 50px;
-
-}
-
-.portrait-sample-container>.material-placeholder{
-    width: 400px;
-    margin-bottom: 60px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.portrait-sample-container>.material-placeholder>img{
-    width: 100%;
-}
-
-@media only screen and (max-width: 1216px){
-    .portrait-sample-container>.material-placeholder{
-        width: 85%;
-    }
-}
-
