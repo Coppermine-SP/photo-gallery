@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 class photo_metadata(models.Model):
-    id = models.IntegerField(),
-    description = models.TextField(),
-    category = models.TextField(),
+    description = models.TextField(blank=True)
+    category = models.TextField()
     published_at = models.DateTimeField()
+    image = models.ImageField()
 
     def __str__(self):
         return self.id
