@@ -8,12 +8,27 @@
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'mainpage/css/collections.css' %}" type="text/css"/>
+    <style>
+        .sample-description>h5{
+            margin-bottom: 15px;
+        }
+        .sample-container{
+            max-width: 23%;
+            min-width: 280px;
+        }
+
+        @media only screen and (max-width: 1702px){
+            .sample-container{
+                max-width: 45%;
+            }
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
     <div class="image-container">
         <div class="header-gradient">
-            <div class="container">
+            <div class="container extended">
                 <div class="collection-info">
                     <h3>Portraits</h3>
                     <h5>그들의 이야기를 전달합니다.</h5>
@@ -22,78 +37,91 @@
         </div>
         <img class="background" src="{% static 'mainpage/image/collections/portrait/background.jpg' %}">
     </div>
-    <div class="container">
+    <div class="container extended" style="max-width: 1700px">
         <h4 class="collection-title">다양한 사람들, 그리고 그들의 이야기를 전달합니다.</h4>
         <blockquote class="collection-description">
             컬렉션 'Portraits'는 여러 사람들의 모습과 그 속에 담긴 이야기를 사진으로써 전달합니다.<br>
             아래에서 컬렉션의 대표작을 만나보세요.
 
         </blockquote>
-        <div class="card-panel grey darken-4 sample-container">
-            <img class="materialboxed" src="{% static 'mainpage/image/collections/landscape/sample-1.jpg' %}">
-            <div class="sample-description">
-                <h5>제주국제공항의 폭설</h5>
-                <blockquote>
-                    2021년 12월에 제주국제공항에 내려진 폭설로 인해 많은 사람들이 큰 불편을 겪었지만,<br>얼어있는 에어사이드는 상당한 매력을 뽐내고 있다.
-                </blockquote>
-                <div class="metadata grey darken-3">
-                    <div class="valign-wrapper">
-                        <i class="material-icons">camera_alt</i>
-                        ILCE-7RM4 (Sony FE 24mm F1.4 GM)
-                    </div>
-                    <div class="valign-wrapper">
-                        <i class="material-icons">camera</i>
-                        F8.0, 1/250
-                    </div>
-                    <div class="valign-wrapper">
-                        <i class="material-icons">movie_filter</i>
-                        ISO 100
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card-panel grey darken-4 sample-container reversed">
-            <img class="materialboxed" src="{% static 'mainpage/image/collections/landscape/sample-2.jpg' %}">
-            <div class="sample-description">
-                <h5>4월의 주남저수지</h5>
-                <blockquote>
-                    4월의 주남저수지는 푸르다.<br>물가의 부드러운 빛은 마음을 평화롭게 만든다.
-                </blockquote>
-                <div class="metadata grey darken-3">
-                    <div class="valign-wrapper">
-                        <i class="material-icons">camera_alt</i>
-                        ILCE-7RM4 (Sony FE 24mm F1.4 GM)
-                    </div>
-                    <div class="valign-wrapper">
-                        <i class="material-icons">camera</i>
-                        F8.0, 1/1250
-                    </div>
-                    <div class="valign-wrapper">
-                        <i class="material-icons">movie_filter</i>
-                        ISO 160
+            <div class="sample-wrapper">
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/portrait/sample-1.jpg' %}">
+                <div class="sample-description">
+                    <h5>지령받는 소방관</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-1(Sony FE 50mm F1.2 GM)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F1.2, 1/200
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 100
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-panel grey darken-4 sample-container">
-            <img class="materialboxed" src="{% static 'mainpage/image/collections/landscape/sample-4.jpg' %}">
-            <div class="sample-description">
-                <h5>서울의 야경</h5>
-                <blockquote>
-                    롯데월드타워에서 바라보는 해질녘 서울의 모습.
-                </blockquote>
-                <div class="metadata grey darken-3">
-                    <div class="valign-wrapper">
-                        <i class="material-icons">camera_alt</i>
-                        ILCE-7RM4 (Sony FE 24mm F1.4 GM)
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/portrait/sample-2.jpg' %}">
+                <div class="sample-description">
+                    <h5>화재 진압대원</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-1 (Sony FE 50mm F1.2 GM)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F5.0, 1/125
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 100
+                        </div>
                     </div>
-                    <div class="valign-wrapper">
-                        <i class="material-icons">camera</i>
-                        F5.6, 3.2s
+                </div>
+            </div>
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/portrait/sample-3.jpg' %}">
+                <div class="sample-description">
+                    <h5>과거의 나</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-1(Sony FE 100mm F2.8 STF GM)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F3.5, 1/125
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 320
+                        </div>
                     </div>
-                    <div class="valign-wrapper">
-                        <i class="material-icons">movie_filter</i>
-                        ISO 100
+                </div>
+            </div>
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/portrait/sample-4.jpg' %}">
+                <div class="sample-description">
+                    <h5>당당한 나</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-1 (Sony FE 100mm F2.8 STF GM)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F3.5, 1/400
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 320
+                        </div>
                     </div>
                 </div>
             </div>

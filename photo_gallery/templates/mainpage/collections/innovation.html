@@ -1,10 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}
+    Gallery :: Innovation
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'mainpage/css/collections.css' %}" type="text/css"/>
+    <style>
+        .sample-description>h5{
+            margin-bottom: 15px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="image-container">
+        <div class="header-gradient">
+            <div class="container extended">
+                <div class="collection-info">
+                    <h3>Innovations</h3>
+                    <h5>과학 기술이 선사하는 아름다움을 탐험하세요.</h5>
+                </div>
+            </div>
+        </div>
+        <img class="background" src="{% static 'mainpage/image/collections/innovation/background.jpg' %}">
+    </div>
+    <div class="container extended">
+        <h4 class="collection-title">자연과 도시, 그 둘 사이의 조화를 찾습니다.</h4>
+        <blockquote class="collection-description">
+            컬렉션 'Landscapes'는 끝없이 펼쳐진 아름다운 바다와 산부터, 도심 속 하늘을 찌를 듯한 빌딩까지 다양한 풍경을 주제로 하고 있습니다.<br>
+            아래에서 컬렉션의 대표작을 만나보세요.
+        </blockquote>
+        <div class="sample-wrapper">
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/innovation/sample-1.jpg' %}">
+                <div class="sample-description">
+                    <h5>10GTek 10Gbase-SR SFP+ Transiver</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-7RM4 (Sony FE 90mm F2.8 Macro G)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F4.0, 1/80
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 160
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/innovation/sample-2.jpg' %}">
+                <div class="sample-description">
+                    <h5>ILCE-9M2</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-7RM4 (Sony FE 90mm F2.8 Macro G)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F3.2, 1/50
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 100
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/innovation/sample-3.jpg' %}">
+                <div class="sample-description">
+                    <h5>ASUS WS C621E SAGE</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-7RM4 (Sony FE 90mm F2.8 Macro G)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F2.8, 1s
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 100
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel grey darken-4 sample-container">
+                <img class="materialboxed" src="{% static 'mainpage/image/collections/innovation/sample-4.jpg' %}">
+                <div class="sample-description">
+                    <h5>UniFi XG-8 Security Gateway</h5>
+                    <div class="metadata grey darken-3">
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera_alt</i>
+                            ILCE-7RM4 (Sony FE 24mm F1.4 GM)
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">camera</i>
+                            F2.5, 1/20
+                        </div>
+                        <div class="valign-wrapper">
+                            <i class="material-icons">movie_filter</i>
+                            ISO 320
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/header.js' %}"></script>
+{% endblock %}
