@@ -21,6 +21,16 @@ def manage(request):
 @xframe_options_sameorigin
 def upload(request):
     if request.method == 'POST':
-        pass
+        image = request.FILES['image']
+        description = request.POST.get('description')
+        category = request.POST.get('category')
+        photo_metadata.objects.create(image=image, description=description, category=category)
+        return render(request, "managepanel/success.html")
     else:
-        return render(request, "managepanel/upload.html")
+        if "HTTP_REFERER" in request.META:
+            referer = request.META["HTTP_REFERER"]
+            if '/manage' not in referer:
+                return render(request, "managepanel/upload.html")
+            else:
+                return redirect("/error?id=400")
+        return redirect("/error?id=400")
