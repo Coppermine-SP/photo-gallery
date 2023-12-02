@@ -44,10 +44,11 @@
 /* modal */
 .modal{
     background-color: #2e2e2e;
+    max-width: 550px;
 }
 
 .modal iframe{
     width: 100%;
-    min-height: 500px;
+    min-height: 580px;
     border: none;
 }
