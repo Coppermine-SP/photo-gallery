@@ -20,7 +20,8 @@
             <div id="toolbar" class="valign-wrapper">
                 <a id="add-record" class="waves-effect waves-light btn modal-trigger" href="#add-record-modal"><i class="material-icons left">add</i>레코드 추가</a>
                 <select id="selected-category">
-                    <option value="*" disabled>카테고리 선택</option>
+                    <option disabled>카테고리 선택</option>
+                    <option value="*">전체</option>
                     <option value="landscape">Landscapes</option>
                     <option value="portrait">Portraits</option>
                     <option value="innovation">Innovations</option>
@@ -35,7 +36,9 @@
                 <h5>레코드가 없습니다.</h5>
             </div>
         {% else %}
-
+            {% for photo in photoList %}
+                <img src="{{ photo.thumbnail.url }}" style="height: 300px;display: block">
+            {% endfor %}
         {% endif %}
     </div>
 
@@ -51,6 +54,10 @@
         $(document).ready(function () {
             $("#selected-category").val("{{ category }}");
             M.AutoInit();
+
+            $("#selected-category").change(function(){
+                window.location.href = 'manage?category=' + $("#selected-category option:selected").val();
+            });
         });
 
         function closeModal(){
