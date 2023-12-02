@@ -23,7 +23,7 @@
 
 {% block layout %}
     <h5 style="margin-top: 0; margin-bottom: 50px">새 레코드 생성</h5>
-    <form method="POST" action="/upload">
+    <form method="post" action="" enctype="multipart/form-data">
         {% csrf_token %}
         <input name="image" type="file" id="image-upload" accept="image/jpg" required style="display: none">
         <div id="drop-zone">
@@ -34,6 +34,14 @@
             <p id="image-name">파일이 업로드 되지 않았습니다.</p>
         </div>
         <div class="input-field">
+            <select name="category">
+                <option value="landscape" selected>Landscapes</option>
+                <option value="portrait">Portraits</option>
+                <option value="innovation">Innovations</option>
+            </select>
+            <label>컬렉션 선택</label>
+        </div>
+        <div class="input-field" style="margin-top: 25px">
             <textarea name="description" id="description" class="materialize-textarea"></textarea>
             <label for="description">이미지 설명</label>
         </div>
@@ -44,6 +52,10 @@
 
 {% block script %}
     <script>
+        $(document).ready(function(){
+           M.AutoInit();
+        });
+
         $("#upload-btn").on("click", function () {
             $("#image-upload").click();
         })
@@ -69,9 +81,8 @@
             }
         });
 
-        $("#submit").click(function(e){
+        $("#submit").click(function (e) {
             $("form").submit();
-            window.parent.closeModal();
         });
     </script>
 {% endblock %}
