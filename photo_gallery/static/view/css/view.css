@@ -35,6 +35,11 @@
 
 }
 
+#description{
+    height: 40px;
+    overflow: hidden;
+}
+
 .info-wrapper{
     height: 250px;
 }
