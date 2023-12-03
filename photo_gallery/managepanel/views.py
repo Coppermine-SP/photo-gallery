@@ -42,7 +42,6 @@ def delete(request):
         return redirect("/error?id=400")
     else:
         target_id = request.POST.get('id')
-        print(target_id)
         try:
             target = photo_metadata.objects.get(id=target_id)
             target.delete()
