@@ -70,6 +70,15 @@ tr{
     margin-right: 10px;
 }
 
+.action-btn:hover{
+    color: #6e6e6e;
+    transition: 0.2s;
+}
+
+.delete:hover{
+    color: #c62828 !important;
+}
+
 .table-wrapper{
     min-height: calc(100vh - 835px);
 }

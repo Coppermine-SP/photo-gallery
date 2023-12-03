@@ -19,7 +19,7 @@
     <div class="container">
         <div class="valign-wrapper notification light-blue darken-3">
             <i class="material-icons">info</i>
-            <h6><strong>관리 시스템에 오신 것을 환영합니다:</strong> ({{ ip }})<br>{{ user_agent }}</h6>
+            <h6><strong>관리 페이지에 오신 것을 환영합니다:</strong> ( {{ ip }} )<br>{{ user_agent }}</h6>
         </div>
         {% if not is_secure %}
             <div class="valign-wrapper notification amber darken-4">
@@ -68,7 +68,7 @@
                             <td class="action-wrapper">
                                 <div class="valign-wrapper">
                                     <a class="action-btn"><i class="material-icons">insert_photo</i></a>
-                                    <a class="action-btn modal-trigger" href="#remove-record-modal"><i
+                                    <a class="action-btn delete modal-trigger" href="#remove-record-modal"><i
                                             class="material-icons" onClick="setID(this)"
                                             data-id="{{ photo.id }}">clear</i></a>
                                 </div>
