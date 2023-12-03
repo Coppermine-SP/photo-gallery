@@ -1,0 +1,46 @@
+.container{
+    max-width: 1800px !important;
+}
+
+@media only screen and (min-width: 993px){
+    .container{
+        width: 80% !important;
+    }
+}
+.top-toolbar{
+    height: 50px;
+    background-color: #212121;
+    box-shadow: 0 4px 4px -4px black;
+}
+.image-wrapper{
+    height: calc(100vh - 300px);
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.image-container{
+    overflow: hidden;
+}
+
+#img{
+    width: 100%;
+    height: calc(100vh - 380px);
+    object-fit: contain;
+    object-position: center;
+    transform-origin: center;
+
+}
+
+.info-wrapper{
+    height: 250px;
+}
+
+.info-card{
+    height: 200px;
+    width: 100%;
+    padding: 15px 30px 15px 30px;
+}
