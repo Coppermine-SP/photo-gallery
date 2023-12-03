@@ -46,7 +46,7 @@ def delete(request):
         try:
             target = photo_metadata.objects.get(id=target_id)
             target.delete()
-        except(e):
+        except Exception as e:
             print(e)
             return HttpResponse(status=500)
         return HttpResponse()
