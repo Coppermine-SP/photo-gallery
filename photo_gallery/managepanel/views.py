@@ -29,7 +29,7 @@ def upload(request):
     else:
         if "HTTP_REFERER" in request.META:
             referer = request.META["HTTP_REFERER"]
-            if '/manage' not in referer:
+            if '/manage' in referer:
                 return render(request, "managepanel/upload.html")
             else:
                 return redirect("/error?id=400")
