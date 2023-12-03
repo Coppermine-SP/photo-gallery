@@ -6,39 +6,78 @@
 {% endblock %}
 
 {% block style %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'managepanel/css/manage.css' %}" type="text/css"/>
 {% endblock %}
 
 {% block content %}
-    <div id="top-items">
-        <div class="grey darken-4">
-            <div class="container" style="padding-top: 30px; padding-bottom: 30px;margin-bottom: 80px">
-                <h4 class="page-title">사이트 관리</h4>
-            </div>
-        </div>
-        <div class="container">
-            <div id="toolbar" class="valign-wrapper">
-                <a id="add-record" class="waves-effect waves-light btn modal-trigger" href="#add-record-modal"><i class="material-icons left">add</i>레코드 추가</a>
-                <select id="selected-category">
-                    <option disabled>카테고리 선택</option>
-                    <option value="*">전체</option>
-                    <option value="landscape">Landscapes</option>
-                    <option value="portrait">Portraits</option>
-                    <option value="innovation">Innovations</option>
-                </select>
-            </div>
-        </div>
+    <div class="header-container" style="background-image: url('{% static 'managepanel/image/header.jpg' %}')">
+        <h3 class="title">Site Management</h3>
+        <h5 class="description">사이트 관리</h5>
+        <div class="header-gradient"></div>
     </div>
     <div class="container">
+        <div class="valign-wrapper notification light-blue darken-3">
+            <i class="material-icons">info</i>
+            <h6><strong>관리 시스템에 오신 것을 환영합니다:</strong> ({{ ip }})<br>{{ user_agent }}</h6>
+        </div>
+        {% if not is_secure %}
+            <div class="valign-wrapper notification amber darken-4">
+                <i class="material-icons">report_problem</i>
+                <h6><strong>연결이 안전하지 않을 수 있습니다.</strong><br>신뢰 할 수 있는 리버스 프록시를 사용하고 있는 것이 아니라면, 안전한 HTTPS 연결을 사용하십시오.
+                </h6>
+            </div>
+        {% endif %}
+        <div id="toolbar" class="valign-wrapper">
+            <a id="add-record" class="waves-effect waves-light btn modal-trigger" href="#add-record-modal"><i
+                    class="material-icons left">add</i>레코드 추가</a>
+            <select id="selected-category">
+                <option disabled>카테고리 선택</option>
+                <option value="*">전체</option>
+                <option value="landscape">Landscapes</option>
+                <option value="portrait">Portraits</option>
+                <option value="innovation">Innovations</option>
+            </select>
+            <h5 style="flex-grow: 1; margin: 0">레코드 관리</h5>
+        </div>
+    </div>
+    </div>
+    <div class="container" style="margin-top: 50px; margin-bottom: 50px">
         {% if rowCount == 0 %}
             <div id="no-record">
                 <i class="material-icons">warning</i>
                 <h5>레코드가 없습니다.</h5>
             </div>
         {% else %}
-            {% for photo in photoList %}
-                <img src="{{ photo.thumbnail.url }}" style="height: 300px;display: block">
-            {% endfor %}
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th class="center">ID</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for photo in photoList %}
+                        <tr>
+                            <td class="center">{{ photo.id }}</td>
+                            <td>{{ photo.category_format }}</td>
+                            <td>{{ photo.description }}</td>
+                            <td class="action-wrapper">
+                                <div class="valign-wrapper">
+                                    <a class="action-btn"><i class="material-icons">insert_photo</i></a>
+                                    <a class="action-btn modal-trigger" href="#remove-record-modal"><i
+                                            class="material-icons" onClick="setID(this)"
+                                            data-id="{{ photo.id }}">clear</i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         {% endif %}
     </div>
 
@@ -48,22 +87,67 @@
         </div>
     </div>
 
+    <div id="remove-record-modal" class="modal">
+        <div class="modal-content">
+            <h5>레코드 삭제</h5>
+            <p>정말 삭제하시겠습니까?<br>이 작업은 되돌릴 수 없습니다.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="deleteRecord()">계속</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">취소</a>
+        </div>
+    </div>
 {% endblock %}
 {% block script %}
+    <script src="{% static 'js/header.js' %}"></script>
     <script>
         $(document).ready(function () {
             $("#selected-category").val("{{ category }}");
             M.AutoInit();
 
-            $("#selected-category").change(function(){
+            $("#selected-category").change(function () {
                 window.location.href = 'manage?category=' + $("#selected-category option:selected").val();
             });
         });
 
-        function closeModal(){
+        function closeModal() {
             var instance = M.Modal.getInstance(document.getElementById("add-record-modal"));
             instance.close();
             location.reload();
         }
+
+
+        let selectedID;
+
+        function setID(element) {
+            selectedID = element.dataset.id;
+        }
+
+        let csrfToken = null;
+        function getCSRFToken() {
+            if (document.cookie) {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    var cookieParts = cookie.split('=');
+                    if (cookieParts[0] === 'csrftoken') {
+                        csrfToken = cookieParts[1];
+                        break;
+                    }
+                }
+            }
+            return csrfToken;
+        }
+
+        function deleteRecord() {
+            getCSRFToken()
+            httpRequest = new XMLHttpRequest();
+            httpRequest.open("POST", "delete", true);
+            httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            httpRequest.setRequestHeader("X-CSRFToken", csrfToken);
+            httpRequest.send("id=" + selectedID);
+            location.reload();
+        }
+
     </script>
 {% endblock %}
