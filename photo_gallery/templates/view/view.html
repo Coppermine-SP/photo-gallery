@@ -10,10 +10,14 @@
 {% endblock %}
 
 {% block layout %}
-    <div class="top-toolbar">
-
+    <div class="top-toolbar valign-wrapper">
+        <a id="backward">
+            <i class="material-icons" style="font-size: 38px">chevron_left</i>
+        </a>
+        <p>돌아가기</p>
+        <p style="text-align: end; flex-grow: 1; font-weight: 600">사진 상세보기</p>
     </div>
-    <div class="container">
+    <div class="container extended">
     <div class="image-wrapper">
         <div id="image-container">
             <img id="img" class="materialboxed" src="{{ target.image.url }}" alt="image">
@@ -23,8 +27,17 @@
     <div class="info-wrapper">
             <div class="container">
                 <div class="info-card card-panel z-depth-1 grey darken-4">
-                    <h5>이미지 정보</h5>
-                    <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
+                    <p id="description">
+                        {% if target.description|striptags|length == 0 %}
+                            사진 설명이 없습니다.
+                        {% else %}
+                            {{ target.description }}
+                        {% endif %}
+                    </p>
+                    <div class="metadata-wrapper valign-wrapper grey darken-3">
+                        <img src="{% static 'view/image/info-icon.png'%}">
+                        <p id="metadata">ILCE-1, Sony FE 24mm F1.4 GM, F3.5, 1/8000, Aperture Priorty, Center Weight</p>
+                    </div>
                 </div>
             </div>
     </div>
