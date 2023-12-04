@@ -1,3 +1,9 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .extended{
     max-width: 1800px !important;
 }
@@ -8,14 +14,22 @@
     }
 }
 .top-toolbar{
-    height: 50px;
-    background-color: #212121;
-    box-shadow: 0 4px 4px -4px black;
     margin-bottom: 40px;
-    display: flex;
-    padding-left: 30px;
-    padding-right: 30px;
+}
+
+.bar{
+    height: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
     color: #c7c7c7 !important;
+    display: flex;
+    background-color: #212121;
+}
+
+#title{
+    text-align: end;
+    flex-grow: 1;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 430px){
@@ -23,19 +37,29 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    #title{
+        display: none;
+    }
 }
 
 .top-toolbar p{
     font-size: 18px;
+    margin: 0;
 }
 
 #backward {
     font-size: 0;
     color: #c7c7c7;
+    transition: .3s;
+}
+
+#backward:hover{
+    color: #ffffff;
+    cursor: context-menu;
 }
 
 .image-wrapper{
-    height: calc(100vh - 300px);
+    /*height: calc(100vh - 300px);*/
     position: relative;
     align-items: center;
     justify-content: center;
@@ -48,46 +72,30 @@
 
 #img{
     width: 100%;
-    height: calc(100vh - 330px);
+    height: calc(100vh - 200px);
     object-fit: contain;
     object-position: center;
     transform-origin: center;
 
 }
 
-#description{
-    height: 40px;
-    overflow: hidden;
-}
-
-.info-wrapper{
-    min-height: 150px;
-}
-
-.info-card{
+.info-bar{
+    height: 70px;
     margin-top: 40px;
-    min-height: 120px;
-    width: 100%;
-    padding: 20px 30px 30px 20px;
-}
-
-.info-card>p{
-    margin: 0;
-    font-size: 20px;
 }
 
 .metadata-wrapper{
-    padding: 10px;
-    border-radius: 3px;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.metadata-wrapper>img {
-    width: 24px;
-    margin-right: 10px;
-}
-
-
-#metadata {
+#metadata{
+    text-align: center;
+    font-weight: 300;
     margin: 0;
+}
+
+#metadata>strong{
+    font-weight: 600;
 }

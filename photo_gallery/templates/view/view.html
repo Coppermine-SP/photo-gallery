@@ -10,36 +10,26 @@
 {% endblock %}
 
 {% block layout %}
-    <div class="top-toolbar valign-wrapper">
-        <a id="backward">
-            <i class="material-icons" style="font-size: 38px">chevron_left</i>
-        </a>
-        <p>돌아가기</p>
-        <p style="text-align: end; flex-grow: 1; font-weight: 600">사진 상세보기</p>
-    </div>
-    <div class="container extended">
-    <div class="image-wrapper">
-        <div id="image-container">
-            <img id="img" class="materialboxed" src="{{ target.image.url }}" alt="image">
+    <div class="wrapper">
+        <div class="bar top-toolbar valign-wrapper z-depth-1">
+            <a id="backward" href="javascript:history.back()">
+                <i class="material-icons" style="font-size: 38px">chevron_left</i>
+            </a>
+            <p>돌아가기</p>
+            <p id="title">사진 상세보기</p>
         </div>
-    </div>
-    </div>
-    <div class="info-wrapper">
-            <div class="container">
-                <div class="info-card card-panel z-depth-1 grey darken-4">
-                    <p id="description">
-                        {% if target.description|striptags|length == 0 %}
-                            사진 설명이 없습니다.
-                        {% else %}
-                            {{ target.description }}
-                        {% endif %}
-                    </p>
-                    <div class="metadata-wrapper valign-wrapper grey darken-3">
-                        <img src="{% static 'view/image/info-icon.png'%}">
-                        <p id="metadata">ILCE-1, Sony FE 24mm F1.4 GM, F3.5, 1/8000, Aperture Priorty, Center Weight</p>
-                    </div>
+        <div class="container extended" style="flex-grow: 1">
+            <div class="image-wrapper">
+                <div id="image-container">
+                    <img id="img" class="materialboxed" src="{{ target.image.url }}" alt="image">
                 </div>
             </div>
+        </div>
+        <div class="bar info-bar z-depth-1">
+            <div class="container extended metadata-wrapper">
+                <p id="metadata"><strong>ILCE-1 (Sony FE 50mm F1.2 GM)</strong><br> F3.5, 1/8000, Aperture Priorty, Center Weighted</p>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
