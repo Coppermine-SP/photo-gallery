@@ -14,6 +14,7 @@ def view(request):
         return render(request, "view/view.html", {"target": target})
     except photo_metadata.DoesNotExist:
         return redirect("/error?id=404")
-    except:
+    except Exception as e:
+        print(e)
         return redirect("/error?id=500")
 
