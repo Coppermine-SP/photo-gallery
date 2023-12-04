@@ -67,7 +67,7 @@
                             <td>{{ photo.description }}</td>
                             <td class="action-wrapper">
                                 <div class="valign-wrapper">
-                                    <a class="action-btn"><i class="material-icons">insert_photo</i></a>
+                                    <a class="action-btn" href="/view?id={{ photo.id }}"><i class="material-icons">insert_photo</i></a>
                                     <a class="action-btn delete modal-trigger" href="#remove-record-modal"><i
                                             class="material-icons" onClick="setID(this)"
                                             data-id="{{ photo.id }}">clear</i></a>
