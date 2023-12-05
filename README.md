@@ -48,7 +48,7 @@ Project Settings (Ctrl + Alt + S)에서 Language & Frameworks > Django 페이지
 
 ### Front-end Dependencies
 - **MaterializeCSS** - https://github.com/Dogfalo/materialize
-- **type-hangul** - https://github.com/SDuck4/type-hangul/
+- **ExifReader** - https://github.com/mattiasw/ExifReader#examples
 
 ### Back-end Dependencies
 - **django-cleanup** - https://pypi.org/project/django-cleanup/
