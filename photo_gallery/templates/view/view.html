@@ -27,14 +27,21 @@
         </div>
         <div class="bar info-bar z-depth-1">
             <div class="container extended metadata-wrapper">
-                <p id="metadata"><strong>ILCE-1 (Sony FE 50mm F1.2 GM)</strong><br> F3.5, 1/8000, Aperture Priorty, Center Weighted</p>
+                <p id="metadata"></p>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block script %}
+    <script src="{% static 'vendors/exif-reader/exif-reader.js' %}"></script>
     <script>
         M.AutoInit();
+
+        const img = document.getElementById("img");
+        const metadata = document.getElementById("metadata");
+        ExifReader.load(img.src).then(tags => {
+            metadata.innerHTML = `<strong>${tags["Model"].description} (${tags["LensModel"].description})</strong><br>${tags["FocalLength"].description}, ${tags["FNumber"].description}, ${tags["ExposureTime"].description}, ISO${tags["ISOSpeedRatings"].description}, ${tags["ExposureProgram"].description}`
+        });
     </script>
 {% endblock %}
