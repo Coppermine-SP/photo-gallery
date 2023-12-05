@@ -13,9 +13,11 @@
 
 ### System Environment을 통한 실행
 
-먼저 Django 패키지를 설치해야 합니다.
+먼저 Django 패키지와 의존성를 설치해야 합니다.
 ```
 pip install Django
+pip install django-cleanup
+pip install django-imagekit
 ```
 그리고 프로젝트 루트 폴더의 photo_gallery로 이동하여 다음 커멘드를 실행하십시오:
 ```
@@ -25,6 +27,13 @@ python3 manage.py runserver
 ### Virtual Environment를 통한 실행 (Recommended)
 Jetbrain Pycharm에서 이 프로젝트를 불러 온 후, 새 venv를 생성하고 Django 패키지를 설치하십시오.
 
+하단의 Terminal에서 아래 명령어로 의존성 패키지를 설치하십시오:
+```
+pip install django-cleanup
+pip install django-imagekit
+```
+
+이제 Pycharm Project에서 Django 지원을 활성화하고, Run Configuration을 생성해야 합니다.
 
 <img src="images/how-to-use/settings.png" style="width: 600px">
 Project Settings (Ctrl + Alt + S)에서 Language & Frameworks > Django 페이지에서 Django 지원을 활성화하십시오.
@@ -36,9 +45,14 @@ Project Settings (Ctrl + Alt + S)에서 Language & Frameworks > Django 페이지
 
 
 ## Dependencies
+
+### Front-end Dependencies
 - **MaterializeCSS** - https://github.com/Dogfalo/materialize
-- **Exif.js** - https://github.com/exif-js/exif-js
-- **type-hangul** - https://github.com/SDuck4/type-hangul/
+- **ExifReader** - https://github.com/mattiasw/ExifReader#examples
+
+### Back-end Dependencies
+- **django-cleanup** - https://pypi.org/project/django-cleanup/
+- **django-imagekit** -https://pypi.org/project/django-imagekit/
 
 ## Copyright Notice
 **이 프로젝트에 사용된 모든 샘플 이미지는 저작권으로 보호되는 이미지입니다.**
