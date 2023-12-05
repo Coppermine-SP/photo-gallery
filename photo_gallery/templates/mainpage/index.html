@@ -23,7 +23,7 @@
         </div>
         <div class="slider-content-wrapper">
             <div class="slider-content">
-                <h3 id="main-text"></h3>
+                <h3 id="main-text">빛을 담다, 인생을 담다.</h3>
                 <a class="valign-wrapper find_more" href="/about">자세히 알아보기 <i class="material-icons">chevron_right</i></a>
             </div>
         </div>
@@ -64,24 +64,4 @@
 {% endblock %}
 {% block script %}
     <script src="{% static 'js/header.js' %}"></script>
-    <script src="{% static 'vendors/type-hangle/type-hangul.bundle.js' %}"></script>
-    <script>
-
-        //slider에 출력할 텍스트 목록
-        const texts = [
-            "빛을 담다, 인생을 담다.",
-            "초 연결성, 그 무한한 가능성.",
-            "세상을 변화시키는 디지털 대전환."]
-        const randomIndex = Math.floor(Math.random() * texts.length);
-
-        $(document).ready(function () {
-            document.getElementById("main-text").innerText = texts[randomIndex];
-            TypeHangul.type('#main-text', {
-                intervalType: 80,
-                humanize: 0.5
-            });
-
-
-        });
-    </script>
 {% endblock %}
