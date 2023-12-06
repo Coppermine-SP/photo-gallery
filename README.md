@@ -66,5 +66,26 @@ Project Settings (Ctrl + Alt + S)에서 Language & Frameworks > Django 페이지
 
 ## Showcase
 
+### 메인 페이지 (Index)
+<img src="images/showcase/index.png">
 
+### 컬렉션 소개 페이지
+<img src="images/showcase/collections.png">
 
+### 리스트 페이지
+<img src="images/showcase/list.png">
+
+### 사진 상세보기 페이지
+<img src="images/showcase/view.png">
+
+### 관리 페이지
+<img src="images/showcase/manage.png">
+
+### 레코드 추가 모달
+<img src="images/showcase/add_modal.png">
+
+### 레코드 삭제 모달
+<img src="images/showcase/delete.png">
+
+### 제작자 소개 페이지
+<img src="images/showcase/contributors.png">
