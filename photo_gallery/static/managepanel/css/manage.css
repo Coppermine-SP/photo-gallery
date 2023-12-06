@@ -94,9 +94,6 @@ tr{
     max-width: 550px;
 }
 
-#remove-record-modal{
-    transform: translateY(200%) !important
-}
 
 .modal iframe{
     width: 100%;
