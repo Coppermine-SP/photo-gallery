@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+    Gallery :: List
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'list/css/list.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="container extended">
+        <div class="list-header">
+            <h3>{{ collection }}</h3>
+            <h6>이 컬렉션에 총 {{ count }}개의 사진이 있습니다.</h6>
+        </div>
+
+        <div class="pagination-wrapper">
+            <ul class="pagination valign-wrapper">
+                <li class="{% if prev_page_url != "None" %}disabled{% endif %}"><a {% if prev_page_url != 'None' %}href="{{ prev_page_url }}"{% endif %} style="padding-left: 0"><i class="material-icons">chevron_left</i></a></li>
+                <li><p>{{current_page}} / {{pages}}</p></li>
+                <li class="{% if next_page_url != "None" %}disabled{% endif %}"><a {% if next_page_url != 'None' %}href="{{ next_page_url }}"{% endif %}><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+    </div>
+        {% if count == 0 %}
+            <div class="no-contents">
+                <i class="material-icons">warning</i>
+                <h5>표시 할 컨텐츠가 없습니다.</h5>
+            </div>
+        {% else %}
+            <div class="picture-container">
+                {% for p in photos %}
+                    <div class="card-panel grey darken-4 z-depth-1" onclick="location.href='/view?id={{ p.id }}'">
+                        <img src="{{ p.thumbnail.url }}">
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
