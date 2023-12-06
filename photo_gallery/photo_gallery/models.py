@@ -10,7 +10,7 @@ class photo_metadata(models.Model):
     category = models.TextField()
     published_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to="img")
-    thumbnail = ImageSpecField(source='image', processors=[ResizeToFit(800, 600)], format='JPEG',
+    thumbnail = ImageSpecField(source='image', processors=[ResizeToFit(1920, 1080)], format='JPEG',
                                options={'quality': 60})
 
     def __str__(self):
