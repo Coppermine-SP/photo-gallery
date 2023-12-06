@@ -30,9 +30,12 @@ def list_view(request):
 
     if page >= pages or content_per_page == count:
         next_page_url = "None"
-        pages = 1
+
     else:
         next_page_url = f"/list?category={category}&page={page + 1}"
+
+    if content_per_page == count:
+        page = 1
 
     return render(request, "list/list.html", {"photos": photos,
                                               "count": len(photo_list),
