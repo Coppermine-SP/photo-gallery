@@ -15,6 +15,7 @@ def list_view(request):
         return redirect("/error?id=404")
     photo_list = photo_metadata.objects.filter(category=category).order_by("id")
     pages = len(photo_list) // content_per_page + 1
+    count = len(photo_list)
 
     if page > pages:
         return redirect("/error?id=400")
@@ -22,13 +23,14 @@ def list_view(request):
     paginator = Paginator(photo_list, content_per_page)
     photos = paginator.get_page(page)
 
-    if page == 1:
+    if page == 1 or content_per_page == count:
         prev_page_url = "None"
     else:
         prev_page_url = f"/list?category={category}&page={page-1}"
 
-    if page >= pages:
+    if page >= pages or content_per_page == count:
         next_page_url = "None"
+        pages = 1
     else:
         next_page_url = f"/list?category={category}&page={page + 1}"
 
