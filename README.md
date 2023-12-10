@@ -10,7 +10,12 @@
 - [Showcase](#showcase)
 
 ## How to Use
+### Important: Django는 Web-Server가 아닙니다.
+아래에서 설명하는 실행 방법은 모두 Django bulit-in Development Server를 사용합니다.
 
+이는 오로지 개발 또는 시연용으로만 사용해야 합니다. 이것을 배포 환경에서 사용하는 것은 심각한 성능 및 보안 문제를 야기할 수 있습니다.
+
+**배포 환경에서는 반드시 WSGI를 통하여 NGINX, IIS, Apache와 같은 신뢰할 수 있는 웹 서버를 사용하십시오.**
 ### System Environment을 통한 실행
 
 먼저 Django 패키지와 의존성를 설치해야 합니다.
